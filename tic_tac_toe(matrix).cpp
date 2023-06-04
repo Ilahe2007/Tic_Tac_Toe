@@ -5,8 +5,8 @@ using namespace std;
 int main(){
 	char a[3][3];
 	ll c=0,d=0;
-	for(ll i=0;i<=2;i++){
-		for(ll j=0;j<=2;j++){
+	for(ll i=1;i<=3;i++){
+		for(ll j=1;j<=3;j++){
 			a[i][j]='_';
 			cout<<a[i][j];
 		}cout<<endl;
@@ -14,10 +14,10 @@ int main(){
 	while(true){
 		if (d==0 and c!=9){
 			ll n,m;
-			cout<<"Enter two numbers between 0-2"<<endl;
+			cout<<"Enter two numbers between 1-3"<<endl;
 			cin>>n>>m;
-			if(n>2 or m>2){
-				cout<<"This number is bigger than 2";
+			if(n>3 or m>3){
+				cout<<"This number is bigger than 3";
 				cin>>n>>m;
 			}else{
 				c++;
@@ -37,14 +37,14 @@ int main(){
 						cin>>n>>m;
 						a[n][m]='x';
 					}
-				}for(ll i=0;i<=2;i++){
+				}for(ll i=1;i<=3;i++){
 					if(d==0){
-						for(ll j=0;j<=2;j++){
-							if((a[i][j]=='x' and a[i+1][j+1]=='x' and a[j+2][j+2]=='x') or (a[i][j]=='x' and a[i][j+1]=='x' and a[i][j+2]=='x') or (a[i][j]=='x' and a[i+1][j]=='x' and a[i+2][j]=='x') or (a[2][0]=='x' and a[1][1]=='x' and a[0][2]=='x')){	
+						for(ll j=1;j<=3;j++){
+							if((a[i][j]=='x' and a[i+1][j+1]=='x' and a[j+2][j+2]=='x') or (a[i][j]=='x' and a[i][j+1]=='x' and a[i][j+2]=='x') or (a[i][j]=='x' and a[i+1][j]=='x' and a[i+2][j]=='x') or (a[3][1]=='x' and a[2][2]=='x' and a[1][3]=='x')){	
 								cout<<"Player2 won";
 								d++;
 								break;
-							}else if((a[i][j]=='o' and a[i+1][j+1]=='o' and a[j+2][j+2]=='o') or (a[i][j]=='o' and a[i][j+1]=='o' and a[i][j+2]=='o') or (a[i][j]=='o' and a[i+1][j]=='o' and a[i+2][j]=='o') or (a[2][0]=='o' and a[1][1]=='o' and a[0][2]=='o')){	
+							}else if((a[i][j]=='o' and a[i+1][j+1]=='o' and a[j+2][j+2]=='o') or (a[i][j]=='o' and a[i][j+1]=='o' and a[i][j+2]=='o') or (a[i][j]=='o' and a[i+1][j]=='o' and a[i+2][j]=='o') or (a[3][1]=='o' and a[2][2]=='o' and a[1][3]=='o')){	
 								cout<<"Player1 won";
 								d++;
 								break;
